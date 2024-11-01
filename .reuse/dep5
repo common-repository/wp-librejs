@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: wp-librejs
+Upstream-Contact: Minsc
+Source: https://plugins.svn.wordpress.org/wp-librejs
+
+Files: *
+Copyright: 2021 Minsc
+License: GPL-3.0-or-later

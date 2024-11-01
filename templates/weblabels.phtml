@@ -1,0 +1,33 @@
+<?php
+/**
+ * JavaScript license web labels
+ *
+ * @package WP LibreJS
+ */
+
+namespace LibreJS;
+
+defined( 'ABSPATH' ) || exit;
+
+require_once( LIBREJS_SRC . '/WebLabel.php' );
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript License Web Labels</title>
+    </head>
+ 	<body>
+ 		<h2>Web Labels</h2>
+        <table id="jslicense-labels1" border="1">
+<?php       foreach ( Loader::get_weblabels() as $post ):  ?>
+<?php           $weblabel = new WebLabel( $post ); ?>
+            <tr>
+                <td><a href="<?php echo esc_attr( $weblabel->get_file() ); ?>"><?php echo esc_html( $weblabel->get_file_name() ); ?></a></td>
+                <td><a href="<?php echo esc_attr( $weblabel->get_license() ); ?>"><?php echo esc_html( $weblabel->get_license_name() ); ?></a></td>
+                <td><a href="<?php echo esc_attr( $weblabel->get_source() ); ?>"><?php echo esc_html( $weblabel->get_source_name() ); ?></a></td>
+            </tr>
+<?php       endforeach; ?>
+        </table>
+	</body>
+</html>
